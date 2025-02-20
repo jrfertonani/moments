@@ -1,4 +1,7 @@
 <div class="class">
   <div *ngIf="canShow" >Altorisado!!!!!!!!!!!!!!!!!!</div>
-  <h2 *ngIf="name === 'Junior'">O nome é junior</h2>
+  <h2 *ngIf="name === 'Junior'; else nameNorFound">O nome é junior</h2>
+  <ng-template #nameNorFound>
+    <h2>O nome não é junior</h2>
+  </ng-template>
 </div>
