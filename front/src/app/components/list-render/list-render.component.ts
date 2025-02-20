@@ -21,7 +21,7 @@ export class ListRenderComponent implements OnInit {
 
   animalDetails = '';
 
-  animals : Animal [] =[];
+  animals: Animal [] =[];
 
   showAge(animal: Animal): void{
     this.animalDetails = `O pet ${animal.name} tem ${animal.age}, anos!`;
