@@ -19,8 +19,9 @@ export class ListRenderComponent {
     {name: "Fish", type: "Fish",age: 5},
   ];
 
-  showAge(animal: Animal){
+  showAge(animal: Animal): void{
     this.animalDetails = `O pet ${animal.name} tem ${animal.age}, anos!`;
   }
+
 
 }
