@@ -9,18 +9,16 @@ import { ListRenderComponent } from "./components/list-render/list-render.compon
 import { PipesComponent } from "./components/pipes/pipes.component";
 import { TwoWayBindingComponent } from "./components/two-way-binding/two-way-binding.component";
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [FirstComponentComponent,
-    ParentDataComponent,
-     DirectivesComponent,
-      IfRenderComponent,
-       EventosComponent,
-        EmitterComponent,
-         ListRenderComponent,
-           TwoWayBindingComponent,
-            FormsModule],
+  imports: [
+    RouterOutlet,
+    RouterModule,
+    ListRenderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
