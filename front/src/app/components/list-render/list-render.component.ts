@@ -1,27 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Animal } from '../../Animal';
 
 import { ListService } from '../../services/list.service';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-list-render',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './list-render.component.html',
   styleUrl: './list-render.component.css'
 })
-export class ListRenderComponent {
+export class ListRenderComponent implements OnInit {
 
-  constructor(private listService: ListService){}
+  constructor(private listService: ListService){
+    this.getAnimals();
+  }
+  ngOnInit(): void {
+  }
 
   animalDetails = '';
 
-  animals : Animal [] =[
-    {name: "Dog", type: "Dog", age: 5},
-    {name: "Cat", type: "Cat", age: 5},
-    {name: "Bob", type: "Horse",age: 5},
-    {name: "Fish", type: "Fish",age: 5},
-  ];
+  animals : Animal [] =[];
 
   showAge(animal: Animal): void{
     this.animalDetails = `O pet ${animal.name} tem ${animal.age}, anos!`;
@@ -32,4 +32,7 @@ export class ListRenderComponent {
     this.animals = this.listService.remove(this.animals, animal);
   }
 
+  getAnimals(): void{
+    this.listService.getAll().subscribe((animals) => (this.animals = animals));
+  }
 }
