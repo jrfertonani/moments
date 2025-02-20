@@ -1,10 +1,3 @@
-import {  Routes } from '@angular/router';
-import { ListRenderComponent } from './components/list-render/list-render.component';
-import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { Routes } from '@angular/router';
 
-export const routes: Routes = [
-
-    { path: '', component: ListRenderComponent },
-    { path: 'list/:id', component: ItemDetailComponent}
-
-  ];
+export const routes: Routes = [];
